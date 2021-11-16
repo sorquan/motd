@@ -23,7 +23,7 @@ do
                 echo "WARNING: Empty name in line $i" 1>&2
         elif [[ $(ssh -qno StrictHostKeyChecking=no ${name} dmidecode -s system-manufacturer) != "VMware, Inc." && ! "${name}" =~ "chp" && ! "${name}" =~ "chd" && ! "${name}" =~ "chq" && ! "${name}" =~ "hdb" ]]
         then
-                echo "WARNING: ${name} - Not VMware VM" 1>&2
+                echo "WARNING: ${name} - Cluster node or something else" 1>&2
         else
                 {
                             if [[ "${name}" =~ "sap" || "${name}" =~ "chp" || "${name}" =~ "chd" || "${name}" =~ "chq" || "${name}" =~ "hdb" ]]
